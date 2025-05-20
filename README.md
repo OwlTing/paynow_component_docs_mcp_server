@@ -1,1 +1,1 @@
-# ai_project_template
+# paynow_component_docs_mcp_server
