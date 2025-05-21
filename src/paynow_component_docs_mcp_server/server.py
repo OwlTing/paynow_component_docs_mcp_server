@@ -21,7 +21,7 @@ from mcp.types import (
 )
 
 PAYNOW_COMPONENT_DOCS_MCP_SERVER_API = (
-    "http://192.168.70.71:5050/paynow-component-docs/get-paynow-component-documentation"
+    "https://mcp.owlting.com/paynow-component-docs/get-paynow-component-documentation"
 )
 
 
