@@ -43,7 +43,7 @@ Go to `Cursor Settings` -> `Tools & Integrations` -> `New MCP Server`.
 {
   "mcpServers": {
     "paynow_component": {
-      "url": "https://paynow-component-docs-mcp.paynow.com.tw/mcp/"
+      "url": "https://paynow-component-docs-mcp.paynow.com.tw/mcp"
     }
   }
 }
@@ -78,25 +78,59 @@ You can also install the MCP server using the VS Code CLI:
 
 ```json
 {
-  "servers": {
-    "paynow_component": {
-      "type": "http",
-      "url": "https://paynow-component-docs-mcp.paynow.com.tw/mcp/"
-    }
-  }
+	"servers": {
+		"paynow_component": {
+			"type": "http",
+			"url": "https://paynow-component-docs-mcp.paynow.com.tw/mcp"
+		}
+	}
 }
 ```
 
 ### Docker
 ```json
 {
-  "servers": {
+	"servers": {
+		"paynow_component": {
+			"command": "docker",
+			"args": [
+				"run", 
+				"-i", 
+				"--rm", 
+				"mcp/paynow_component"
+			]
+		}
+	}
+}
+```
+</details>
+
+
+<details>
+<summary><b>Install in Claude Desktop</b></summary>
+
+#### For MCP Server
+
+Follow the MCP install [guide](https://modelcontextprotocol.io/docs/develop/connect-remote-servers), in the "Add a Custom Connector" step, enter the following URL:
+
+```
+https://paynow-component-docs-mcp.paynow.com.tw/mcp
+```
+
+#### Docker
+
+Follow the MCP install [guide](https://modelcontextprotocol.io/docs/develop/connect-local-servers), use following configuration:
+
+```json
+# Add the server to your claude_desktop_config.json
+{
+  "mcpServers": {
     "paynow_component": {
       "command": "docker",
       "args": [
-        "run", 
-        "-i", 
-        "--rm", 
+        "run",
+        "-i",
+        "--rm",
         "mcp/paynow_component"
       ]
     }
@@ -107,24 +141,11 @@ You can also install the MCP server using the VS Code CLI:
 
 
 <details>
-<summary><b>Install in Claude Desktop</b></summary>
+<summary><b>Install in Claude Code</b></summary>
 
-Follow the MCP install [guide](https://modelcontextprotocol.io/quickstart/user), use following configuration:
+Follow the MCP install [guide](https://code.claude.com/docs/en/mcp), run the following command:
 
-```json
-# Add the server to your claude_desktop_config.json
-{
-  "mcpServers": {
-    "paynow_component": {
-      "command": "docker",
-      "args": [
-        "run", 
-        "-i", 
-        "--rm", 
-        "mcp/paynow_component"
-      ]
-    }
-  }
-}
+```bash
+claude mcp add --transport http paynow_component https://paynow-component-docs-mcp.paynow.com.tw/mcp
 ```
 </details>
