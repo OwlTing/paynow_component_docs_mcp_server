@@ -70,7 +70,7 @@ Go to `Cursor Settings` -> `Tools & Integrations` -> `New MCP Server`.
 <details><summary><b>Install in VS Code</b></summary>
 
 #### Click the button to install:
-[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install%20PayNow%20Component-blue?logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22paynow_component%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fpaynow-component-docs-mcp.paynow.com.tw%2Fmcp%2F%22%7D)
+[![Install in VS Code](https://img.shields.io/badge/VS%20Code-Install%20PayNow%20Component-blue?logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22paynow_component%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fpaynow-component-docs-mcp.paynow.com.tw%2Fmcp%22%7D)
 
 #### Or install manually:
 
