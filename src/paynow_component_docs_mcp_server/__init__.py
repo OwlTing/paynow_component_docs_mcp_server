@@ -1,16 +1,8 @@
-from .server import serve
-
 def main():
-    """Search Owlpay Harbor documentation MCP server."""
-    import argparse
-    import asyncio
+    """Search PayNow Component documentation MCP server."""
+    from .server import main as server_main
 
-    parser = argparse.ArgumentParser(
-        description="Search Owlpay Harbor documentation via MCP"
-    )
-    # no extra CLI 參數
-    args = parser.parse_args()
-    asyncio.run(serve())
+    server_main()
 
 if __name__ == "__main__":
     main()
