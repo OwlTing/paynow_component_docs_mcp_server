@@ -2,6 +2,7 @@ import asyncio
 import logging
 from typing import Any, Annotated
 
+import anyio
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -87,11 +88,11 @@ mcp = FastMCP(
 )
 
 @mcp.tool(description='Search Paynow Component documentation. Any non-English input will be auto-translated to English before populating the query.')
-def search_paynow_component_documentation(
+async def search_paynow_component_documentation(
     query: Annotated[str, Field(description="Search keywords in English. Any non-English input will be auto-translated to English before populating this field.")]
 ) -> str:
     """Search Paynow Component documentation with direct query parameter."""
-    return search_paynow_component_documentation_func(query)
+    return await anyio.to_thread.run_sync(search_paynow_component_documentation_func, query)
 
 # =================== stdio_server for MCP mode ===================
 async def serve_mcp() -> None:
@@ -133,7 +134,7 @@ async def serve_mcp() -> None:
         except ValueError as e:
             raise McpError(ErrorData(code=INVALID_PARAMS, message=str(e)))
 
-        result = search_paynow_component_documentation(args.query)
+        result = await anyio.to_thread.run_sync(search_paynow_component_documentation_func, args.query)
         return [TextContent(type="text", text=result)]
 
     @server.get_prompt()
@@ -143,7 +144,7 @@ async def serve_mcp() -> None:
         if not arguments or "query" not in arguments:
             raise McpError(ErrorData(code=INVALID_PARAMS, message="Query is required"))
         try:
-            result = search_paynow_component_documentation(arguments["query"])
+            result = search_paynow_component_documentation_func(arguments["query"])
         except McpError as e:
             return GetPromptResult(
                 description="Search failed",
