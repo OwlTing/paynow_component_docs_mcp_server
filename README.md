@@ -19,7 +19,7 @@ The PayNow Component MCP Server provides documentation search capabilities. This
 
 ## Install
 
-For quick installation, use one of the one-click install buttons above. The remote MCP Server is hosted by PayNow and provides the easiest method for getting up and running. If your MCP host does not support remote MCP servers, you can easily set up the local version using Docker.
+For quick installation, use one of the one-click install buttons below. The remote MCP Server is hosted by PayNow and provides the easiest method for getting up and running. If your MCP host does not support remote MCP servers, you can easily set up the local version using Docker.
 
 
 Docker Setup (For Local MCP Server Only):
@@ -33,7 +33,7 @@ docker build -f Dockerfile.local_docker -t mcp/paynow_component . --no-cache
 
 #### Click the button to install:
 
-[![Install in Cursor](https://img.shields.io/badge/Cursor-Install%20PayNow%20Component-blue?logo=cursor&logoColor=white)](https://owlting.github.io/paynow_component_docs_mcp_server/install-cursor-mcp.html)
+[![Install in Cursor](https://img.shields.io/badge/Cursor-Install%20PayNow%20Component-blue?logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=paynow_component&config=eyJ1cmwiOiJodHRwczovL3BheW5vdy1jb21wb25lbnQtZG9jcy1tY3AucGF5bm93LmNvbS50dy9tY3AifQ)
 
 #### Or install manually:
 
